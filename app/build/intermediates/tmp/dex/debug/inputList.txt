@@ -1,0 +1,5 @@
+C:\Users\Usuario\Desktop\UVGmovil\app\build\intermediates\classes\debug
+C:\Users\Usuario\Desktop\UVGmovil\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-90104a25373797e0596275e72c5291db8827fedc.jar
+C:\Users\Usuario\Desktop\UVGmovil\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-7a86778257fa6b10bc7cb1fd5281595275cb7f86.jar
+C:\Users\Usuario\Desktop\UVGmovil\app\build\intermediates\pre-dexed\debug\classes-58ea53cab2e3ce60b19c0b88bdab5e71364c99ae.jar
+C:\Users\Usuario\Desktop\UVGmovil\app\build\intermediates\pre-dexed\debug\classes-77430233ad7ccb1e8558cc02c155ea8b43f29245.jar
