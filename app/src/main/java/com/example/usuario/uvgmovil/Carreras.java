@@ -21,7 +21,6 @@ public class Carreras extends ActionBarActivity {
         viewCarreras.getSettings().setJavaScriptEnabled(true);
         viewCarreras.loadUrl(url);
     }
-
     private class MyBrowser extends WebViewClient{
         public boolean cargarUrlCliente(WebView view, String url){
             view.loadUrl(url);

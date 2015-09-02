@@ -90,6 +90,39 @@
             android:name="com.example.usuario.uvgmovil.Carrerasb"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.Comunidad_UVG"
+            android:label="@string/title_activity_comunidad__uvg" >
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.Bienestar_Estudiantil"
+            android:label="@string/title_activity_bienestar__estudiantil" >
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.Asociaciones"
+            android:label="@string/title_activity_asociaciones" >
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.AssetsManager"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.Egresados"
+            android:label="@string/title_activity_egresados" >
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.example.usuario.uvgmovil.Facebook"
+            android:label="@string/title_activity_facebook" >
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.ArteCultura"
+            android:label="@string/title_activity_arte_cultura" >
+        </activity>
     </application>
 
 </manifest>

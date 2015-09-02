@@ -54,23 +54,22 @@ public class TorneosInternos extends ActionBarActivity {
                     startActivity(new Intent(TorneosInternos.this, Volley.class));
                 }
                 if (clickedViewedView.getText() == "Reglamento") {
-                    CopyReadAssets();
+                    CopyReadAssets("Reglamento-General-2015.pdf");
                 }
             }
         });
 
     }
-
-    private void CopyReadAssets()
+    public void CopyReadAssets(String filename)
     {
         AssetManager assetManager = getAssets();
 
         InputStream in = null;
         OutputStream out = null;
-        File file = new File(getFilesDir(), "Reglamento-General-2015.pdf");
+        File file = new File(getFilesDir(), filename);
         try
         {
-            in = assetManager.open("Reglamento-General-2015.pdf");
+            in = assetManager.open(filename);
             out = openFileOutput(file.getName(), Context.MODE_WORLD_READABLE);
 
             copyFile(in, out);
@@ -86,7 +85,7 @@ public class TorneosInternos extends ActionBarActivity {
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(
-                Uri.parse("file://" + getFilesDir() + "/Reglamento-General-2015.pdf"),
+                Uri.parse("file://" + getFilesDir() + "/"+filename),
                 "application/pdf");
 
         startActivity(intent);
@@ -101,5 +100,7 @@ public class TorneosInternos extends ActionBarActivity {
             out.write(buffer, 0, read);
         }
     }
+
+
 }
 

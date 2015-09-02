@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class News extends ActionBarActivity {
 
     private ListView mList;
-    private String[] Lista = {"UVG Hoy","Deportes UVG"};
+    private String[] Lista = {"UVG Hoy","Deportes UVG","Comunidad UVG"};
     ArrayAdapter<String> adapter;
 
     @Override
@@ -38,6 +38,9 @@ public class News extends ActionBarActivity {
                 }
                 if (clickedViewedView.getText() == "Deportes UVG") {
                     startActivity(new Intent(News.this, Deportes.class));
+                }
+                if (clickedViewedView.getText() == "Comunidad UVG") {
+                    startActivity(new Intent(News.this, Comunidad_UVG.class));
                 }
             }
         });

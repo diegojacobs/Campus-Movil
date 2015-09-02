@@ -164,9 +164,16 @@
     <string name="action_settings">Settings</string>
     <string name="alerta_de_pago">Alerta de Pago</string>
     <string name="app_name">UVGmovil</string>
+    <string name="facebook_app_id">facebook_app_id </string>
     <string name="hello_world">Hello world!</string>
     <string name="switch_status">Notificaciones</string>
     <string name="switch_str">Activar</string>
+    <string name="title_activity_arte_cultura">Arte y Cultura</string>
+    <string name="title_activity_asociaciones">Asociaciones</string>
+    <string name="title_activity_bienestar__estudiantil">Bienestar Estudiantil</string>
+    <string name="title_activity_comunidad__uvg">Comunidad UVG</string>
+    <string name="title_activity_egresados">Egresados</string>
+    <string name="title_activity_facebook">Facebook</string>
     <!-- From: file:/C:/Users/Usuario/Desktop/UVGmovil/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
