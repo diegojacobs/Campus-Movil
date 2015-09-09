@@ -20,14 +20,7 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
 
-       /* Button displaypass =(Button)findViewById(R.id.BtnLogin);
-        displaypass.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v){
-                    Intent newform = new Intent(MainActivity.this, Principal.class);
-                    startActivity(newform);
-                }
-        });*/
+        getSupportActionBar().hide();
     }
 
     public void OnClickButton(View v) {
