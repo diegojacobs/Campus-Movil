@@ -1329,16 +1329,17 @@ containing a value of this type.
         public static final int ic_launcher=0x7f02004e;
         public static final int icono=0x7f02004f;
         public static final int information_green=0x7f020050;
-        public static final int maps=0x7f020051;
-        public static final int new_movil=0x7f020052;
-        public static final int pago_trans=0x7f020053;
-        public static final int sele_balo_img=0x7f020054;
-        public static final int sele_fut_img=0x7f020055;
-        public static final int sele_voli_img=0x7f020056;
-        public static final int tele=0x7f020057;
-        public static final int uvg=0x7f020058;
-        public static final int uvg_50a=0x7f020059;
-        public static final int uvglogin=0x7f02005a;
+        public static final int logo=0x7f020051;
+        public static final int maps=0x7f020052;
+        public static final int new_movil=0x7f020053;
+        public static final int pago_trans=0x7f020054;
+        public static final int sele_balo_img=0x7f020055;
+        public static final int sele_fut_img=0x7f020056;
+        public static final int sele_voli_img=0x7f020057;
+        public static final int tele=0x7f020058;
+        public static final int uvg=0x7f020059;
+        public static final int uvg_50a=0x7f02005a;
+        public static final int uvglogin=0x7f02005b;
     }
     public static final class id {
         public static final int BtnAECCSSE=0x7f0b0052;

@@ -1,9 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
@@ -34,7 +36,9 @@ public class Pago extends ActionBarActivity {
     private NotificationManager mNotificationManager;
     private static final int PAGO_ID = 1;
 
+    private UserConfigs conf;
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,7 @@ public class Pago extends ActionBarActivity {
         mList = (ListView)findViewById(R.id.LVpago);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista);
         mList.setAdapter(adapter);
+        conf = new UserConfigs(this);
 
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -60,7 +65,7 @@ public class Pago extends ActionBarActivity {
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         // Personalizacion de notificacion
-        notificacion.setSmallIcon(R.drawable.icono); // Icono pequeno superior
+        notificacion.setSmallIcon(R.drawable.icono); // Icono pequeño superior
         notificacion.setTicker("PAGO UVG"); // Mensaje cuando aparece
         notificacion.setWhen(System.currentTimeMillis()); // Hora que mostramos en la notificacion
         notificacion.setContentTitle("UVG");
@@ -73,8 +78,8 @@ public class Pago extends ActionBarActivity {
 
         notificacion.setContentIntent(contIntent);
 
-        //set the switch to ON
-        activar.setChecked(true);
+        //set the switch to last value saved
+        activar.setChecked(conf.isNotificationsON());
 
         activar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -85,6 +90,8 @@ public class Pago extends ActionBarActivity {
                     mNotificationManager.notify(PAGO_ID,notificacion.build());
                     // status notificaciones
                     switchStatus.setText("Las notificaciones estan activadas");
+                    // guardar estado
+                    conf.setNotifications(true);
                 }
                 else
                 {
@@ -92,6 +99,8 @@ public class Pago extends ActionBarActivity {
                     mNotificationManager.cancel(PAGO_ID);
                     // status notificaciones
                     switchStatus.setText("Las notificaciones estan desactivadas");
+                    // guardar estado
+                    conf.setNotifications(false);
                 }
             }
         });
