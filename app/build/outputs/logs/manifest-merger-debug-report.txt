@@ -187,6 +187,36 @@ ADDED from AndroidManifest.xml:116:9
 		ADDED from AndroidManifest.xml:118:13
 	android:name
 		ADDED from AndroidManifest.xml:117:13
+activity#com.example.usuario.uvgmovil.NoticiasCI
+ADDED from AndroidManifest.xml:120:9
+	android:label
+		ADDED from AndroidManifest.xml:122:13
+	android:name
+		ADDED from AndroidManifest.xml:121:13
+activity#com.example.usuario.uvgmovil.CarrerasIngenieria
+ADDED from AndroidManifest.xml:124:9
+	android:label
+		ADDED from AndroidManifest.xml:126:13
+	android:name
+		ADDED from AndroidManifest.xml:125:13
+activity#com.example.usuario.uvgmovil.CarrerasCCHH
+ADDED from AndroidManifest.xml:128:9
+	android:label
+		ADDED from AndroidManifest.xml:130:13
+	android:name
+		ADDED from AndroidManifest.xml:129:13
+activity#com.example.usuario.uvgmovil.CarrerasCCSS
+ADDED from AndroidManifest.xml:132:9
+	android:label
+		ADDED from AndroidManifest.xml:134:13
+	android:name
+		ADDED from AndroidManifest.xml:133:13
+activity#com.example.usuario.uvgmovil.CarrerasEDU
+ADDED from AndroidManifest.xml:136:9
+	android:label
+		ADDED from AndroidManifest.xml:138:13
+	android:name
+		ADDED from AndroidManifest.xml:137:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

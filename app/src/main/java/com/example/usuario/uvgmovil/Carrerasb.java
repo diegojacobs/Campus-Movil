@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class Carrerasb extends ActionBarActivity{
 
     private ListView mList;
-    private String[] Lista = {"Industrial","compu","a","b","c","d","e","f","g","h","i"};
+    private final String[]ListaFac={"Ingeniería","Colegio universitario y asuntos estudiantiles","Ciencias y Humanidades","Ciencias Sociales","Educación"};
     ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class Carrerasb extends ActionBarActivity{
         setContentView(R.layout.carrerasb);
 
         mList = (ListView) findViewById(R.id.LVcarreras);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, ListaFac); //Creamos el adapter con el tipo de lista que queremos y la Lista
         mList.setAdapter(adapter);
 
         //Creamos el OnClick para nuestra Lista
@@ -32,13 +32,32 @@ public class Carrerasb extends ActionBarActivity{
 
            public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
                 TextView clickedViewedView = (TextView) view;
-                if (clickedViewedView.getText() == "Industrial") {
-                    Uri uri =Uri.parse("http://www.uvg.edu.gt/ingenieria/industrial/doc/ING_Ingenieria_Industrial.pdf");
-                    Intent intent=new Intent(Intent.ACTION_VIEW,uri);
-                    startActivity(intent);
-                }
+               switch ((String)clickedViewedView.getText()){
 
-            }
+                   case ("Ingeniería"):
+                       startActivity(new Intent(Carrerasb.this, CarrerasIngenieria.class));
+                       break;
+
+                   case ("Colegio universitario y asuntos estudiantiles"):
+                       Uri uri =Uri.parse("http://uvg.edu.gt/universitario/");
+                       Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+                       startActivity(intent);
+                       break;
+
+                   case ("Ciencias y Humanidades"):
+                       startActivity(new Intent(Carrerasb.this, CarrerasCCHH.class));
+                       break;
+
+                   case ("Ciencias Sociales"):
+                       startActivity(new Intent(Carrerasb.this, CarrerasCCSS.class));
+                       break;
+
+                   case ("Educación"):
+                       startActivity(new Intent(Carrerasb.this, CarrerasEDU.class));
+                       break;
+               }
+
+           }
         });
     }
 }

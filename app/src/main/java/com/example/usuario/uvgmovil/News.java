@@ -1,6 +1,7 @@
 package com.example.usuario.uvgmovil;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 public class News extends ActionBarActivity {
 
     private ListView mList;
-    private String[] Lista = {"UVG Hoy","Deportes UVG","Comunidad UVG"};
+    private String[] Lista = {"UVG Hoy","Deportes UVG","Comunidad UVG","Centro de investigaciones"};
     ArrayAdapter<String> adapter;
 
     @Override
@@ -41,6 +42,12 @@ public class News extends ActionBarActivity {
                 }
                 if (clickedViewedView.getText() == "Comunidad UVG") {
                     startActivity(new Intent(News.this, Comunidad_UVG.class));
+                }
+                if (clickedViewedView.getText() == "Centro de investigaciones") {
+                    String url="http://www.uvg.edu.gt/investigacion/index.html#";
+                    Uri uri =Uri.parse(url);
+                    Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+                    startActivity(intent);
                 }
             }
         });

@@ -48,7 +48,7 @@ public class Principal extends ActionBarActivity{
         mBtnInfo.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-                        startActivity(new Intent(Principal.this, Carreras.class));
+                        startActivity(new Intent(Principal.this, Info.class));
                     }
                 }
         );

@@ -117,6 +117,26 @@
             android:name=".ArteCultura"
             android:label="@string/title_activity_arte_cultura" >
         </activity>
+        <activity
+            android:name=".NoticiasCI"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".CarrerasIngenieria"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".CarrerasCCHH"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".CarrerasCCSS"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".CarrerasEDU"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
