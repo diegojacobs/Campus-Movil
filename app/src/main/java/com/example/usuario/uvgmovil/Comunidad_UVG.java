@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
+import android.support.v4.app.NavUtils;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,8 +32,13 @@ public class Comunidad_UVG extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comunidad__uvg);
 
-        mList = (ListView)findViewById(R.id.LVcomunidad);
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+        mList = (ListView) findViewById(R.id.LVcomunidad);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
         mList.setAdapter(adapter);
 
         //Creamos el OnClick para nuestra Lista
@@ -52,7 +59,7 @@ public class Comunidad_UVG extends ActionBarActivity {
                     startActivity(new Intent(Comunidad_UVG.this, ArteCultura.class));
                 }
                 if (clickedViewedView.getText() == "Seguro UVG") {
-                    AssetsManager asset = new AssetsManager();
+                    //AssetsManager asset = new AssetsManager();
                     CopyReadAssets("Boletin-seguro-2015.pdf");
                 }
             }

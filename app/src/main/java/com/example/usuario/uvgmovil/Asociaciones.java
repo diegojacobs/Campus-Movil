@@ -32,6 +32,10 @@ public class Asociaciones extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asociaciones);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         mBtnAECCTI = (ImageView) findViewById(R.id.BtnAECCTI);
         mBtnAEIQ = (ImageView) findViewById(R.id.BtnAEIQ);
         mBtnAEIE = (ImageView) findViewById(R.id.BtnAEIE);

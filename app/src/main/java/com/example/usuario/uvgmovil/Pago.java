@@ -44,6 +44,10 @@ public class Pago extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pago);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         mList = (ListView)findViewById(R.id.LVpago);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista);
         mList.setAdapter(adapter);

@@ -11,8 +11,10 @@
     <string name="title_activity_bienestar__estudiantil">Bienestar Estudiantil</string>
     <string name="title_activity_asociaciones">Asociaciones</string>
     <string name="title_activity_egresados">Egresados</string>
+    <string name="title_activity_info">Información</string>
     <string name="facebook_app_id">facebook_app_id </string>
     <string name="title_activity_facebook">Facebook</string>
     <string name="title_activity_arte_cultura">Arte y Cultura</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

@@ -15,6 +15,10 @@ public class NoticiasCI extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carreras);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         String url="http://www.uvg.edu.gt/investigacion/index.html#";
         WebView viewCarreras=(WebView) this.findViewById(R.id.navegadorCarreras);
         viewCarreras.setWebViewClient(new MyBrowser());

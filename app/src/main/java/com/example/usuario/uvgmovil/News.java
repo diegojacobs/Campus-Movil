@@ -25,6 +25,10 @@ public class News extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         mList = (ListView)findViewById(R.id.LVnews);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
         mList.setAdapter(adapter);

@@ -13,6 +13,10 @@ public class Entrenos_Deportivos extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entrenos_deportivos);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
     }
 }

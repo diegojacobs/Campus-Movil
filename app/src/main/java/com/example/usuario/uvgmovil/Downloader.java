@@ -1,16 +1,27 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Environment;
+
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Created by Diego Jacobs on 03/08/2015.
  */
 public class Downloader {
 
+    private String fileName;
+    public Downloader (String file)
+    {
+        this.fileName = file;
+    }
     public static void DownloadFile(String fileURL, File directory) {
         try {
 
