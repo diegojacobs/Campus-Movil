@@ -10,6 +10,7 @@ public class UserConfigs {
 
     private final String SHARED_PREFS_FILE = "UserPrefs";
     private final String KEY_NOTIFICATIONS = "Notifications";
+    private final String EMAIL = "correo";
 
     private Context mContext;
 
@@ -33,5 +34,18 @@ public class UserConfigs {
         editor.putBoolean(KEY_NOTIFICATIONS, val);
         editor.commit();
     }
+
+    public void setEmail(String val)
+    {
+        SharedPreferences.Editor editor = getSettings().edit();
+        editor.putString(EMAIL, val);
+        editor.commit();
+    }
+
+    public String getEmail()
+    {
+        return getSettings().getString(EMAIL,"correo");
+    }
+
 }
 

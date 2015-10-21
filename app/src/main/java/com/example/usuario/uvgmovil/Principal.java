@@ -55,14 +55,6 @@ public class Principal extends AppCompatActivity {
                 }
         );
 
-        //Boton de Portal
-        mBtnPortal.setOnClickListener(
-                new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        startActivity(new Intent(Principal.this, Portal.class));
-                    }
-                }
-        );
 
         //Boton de Informacion
         mBtnInfo.setOnClickListener(
@@ -92,6 +84,21 @@ public class Principal extends AppCompatActivity {
         });
     }
 
+    //Boton de Portal
+    public void OnClickButton(View v) {
+        if ((v.getId() == R.id.BtnPortal)) {
+            //validamos que haya hecho login
+            UserConfigs conf = new UserConfigs(this);
+            if (!conf.getEmail().equals("correo")) {
+                startActivity(new Intent(Principal.this, Portal.class));
+
+            } else {
+                Intent i = new Intent(Principal.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
+                startActivity(i);
+            }
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -108,6 +115,16 @@ public class Principal extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.action_signout) {
+            UserConfigs conf = new UserConfigs(this);
+            conf.setEmail("correo");
+            conf.setNotifications(true);
+
+            Intent i = new Intent(Principal.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
+            startActivity(i);
             return true;
         }
 

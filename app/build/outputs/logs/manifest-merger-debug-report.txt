@@ -208,7 +208,7 @@ MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Usuario\Documents\U
 activity#com.example.usuario.uvgmovil.MainActivity
 ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:27:9-36:20
 	android:label
-		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:29:13-56
+		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:29:13-45
 	android:theme
 		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:30:13-56
 	android:name
