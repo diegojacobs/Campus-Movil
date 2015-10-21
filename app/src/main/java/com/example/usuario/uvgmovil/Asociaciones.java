@@ -1,5 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +19,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class Asociaciones extends ActionBarActivity {
+public class Asociaciones extends AppCompatActivity {
     ImageView mBtnAECCTI;
     ImageView mBtnAEIQ;
     ImageView mBtnAEIE;
@@ -31,10 +37,10 @@ public class Asociaciones extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.asociaciones);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mBtnAECCTI = (ImageView) findViewById(R.id.BtnAECCTI);
         mBtnAEIQ = (ImageView) findViewById(R.id.BtnAEIQ);
@@ -53,7 +59,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/aeccti.uvg?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AECCTI");
                         startActivity(intent);
@@ -65,7 +71,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/aeiq.uvg?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEIQ");
                         startActivity(intent);
@@ -77,7 +83,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/aeie.uvg";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEIE");
                         startActivity(intent);
@@ -90,7 +96,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/AMEC.UVG?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AMEC");
                         startActivity(intent);
@@ -103,7 +109,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/aeuvg/timeline";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEUVG");
                         startActivity(intent);
@@ -116,7 +122,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/aefedu?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEFE");
                         startActivity(intent);
@@ -129,7 +135,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/pages/Asoden-UVG/340096079342711?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "ASODEN");
                         startActivity(intent);
@@ -142,7 +148,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/pages/AEICA/150576038430339?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEICA");
                         startActivity(intent);
@@ -154,7 +160,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/pages/Asociaci%C3%B3n-de-Estudiantes-de-Ingenieria-Industrial-2015-UVG/549886978477702?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEII");
                         startActivity(intent);
@@ -167,7 +173,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/pages/Asociaci%C3%B3n-de-Estudiantes-de-Ing-Mecatr%C3%B3nica/866672916699347?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEIM");
                         startActivity(intent);
@@ -180,7 +186,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/aeccsse.uvg.3?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AECCSSE");
                         startActivity(intent);
@@ -192,7 +198,7 @@ public class Asociaciones extends ActionBarActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         String url="https://www.facebook.com/pages/AEFI-UVG/818587044860797?fref=ts";
-                        Intent intent = new Intent(Asociaciones.this, Facebook.class);
+                        Intent intent = new Intent(Asociaciones.this, mWebBrowser.class);
                         intent.putExtra("direccion", url);
                         intent.putExtra("tittle", "AEFI");
                         startActivity(intent);
@@ -204,7 +210,7 @@ public class Asociaciones extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_asociaciones, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -222,4 +228,5 @@ public class Asociaciones extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

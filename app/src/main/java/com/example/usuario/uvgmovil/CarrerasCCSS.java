@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,30 +45,30 @@ public class CarrerasCCSS extends ActionBarActivity{
         //Creamos el OnClick para nuestra Lista
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-           public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
                 TextView clickedViewedView = (TextView) view;
-               switch ((String)clickedViewedView.getText()){
+                switch ((String)clickedViewedView.getText()){
 
-                   case ("Arquelogía"):
-                       CopyReadAssets("Licenciatura_en_Arqueologia.pdf");
-                       break;
+                    case ("Arquelogía"):
+                        CopyReadAssets("Licenciatura_en_Arqueologia.pdf");
+                        break;
 
-                   case ("Antropología y sociología"):
-                       CopyReadAssets("Licenciatura_en_Antropo_y_Socio.pdf");
-                       break;
+                    case ("Antropología y sociología"):
+                        CopyReadAssets("Licenciatura_en_Antropo_y_Socio.pdf");
+                        break;
 
-                   case ("Historia"):
-                       CopyReadAssets("Lic_en_Historia.pdf");
-                       break;
+                    case ("Historia"):
+                        CopyReadAssets("Lic_en_Historia.pdf");
+                        break;
 
-                   case ("Psicología"):
-                       CopyReadAssets("Lic_en_Psicologia.pdf");
-                       break;
+                    case ("Psicología"):
+                        CopyReadAssets("Lic_en_Psicologia.pdf");
+                        break;
 
-               }
+                }
 
 
-           }
+            }
         });
     }
 
@@ -108,5 +110,27 @@ public class CarrerasCCSS extends ActionBarActivity{
         {
             out.write(buffer, 0, read);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

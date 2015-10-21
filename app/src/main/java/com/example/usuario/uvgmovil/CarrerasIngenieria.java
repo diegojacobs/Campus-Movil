@@ -6,7 +6,10 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +24,7 @@ import java.io.OutputStream;
 /**
  * Created by Roberto Chiroy on 09/09/2015.
  */
-public class CarrerasIngenieria extends ActionBarActivity{
+public class CarrerasIngenieria extends AppCompatActivity {
 
     private ListView mList;
     private final String[] Lista = {"Ciencias de la Administración","Ciencias de Alimentos","Ciencias de la computación",
@@ -43,55 +46,55 @@ public class CarrerasIngenieria extends ActionBarActivity{
         //Creamos el OnClick para nuestra Lista
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-           public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
-               TextView clickedViewedView = (TextView) view;
-               switch ((String)clickedViewedView.getText()){
-                   case ("Ciencias de la Administración"):
-                       //abre el asset dentro del pdf viewer del telefono
-                       CopyReadAssets("Ciencias_de_la_Administracion.pdf");
-                       break;
+            public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
+                TextView clickedViewedView = (TextView) view;
+                switch ((String)clickedViewedView.getText()){
+                    case ("Ciencias de la Administración"):
+                        //abre el asset dentro del pdf viewer del telefono
+                        CopyReadAssets("Ciencias_de_la_Administracion.pdf");
+                        break;
 
-                   case ("Ciencias de Alimentos"):
-                       CopyReadAssets("ING_Ciencias_de_los_Alimentos.pdf");
-                       break;
+                    case ("Ciencias de Alimentos"):
+                        CopyReadAssets("ING_Ciencias_de_los_Alimentos.pdf");
+                        break;
 
-                   case ("Ciencias de la computación"):
-                       CopyReadAssets("ING_Computacion.pdf");
-                       break;
+                    case ("Ciencias de la computación"):
+                        CopyReadAssets("ING_Computacion.pdf");
+                        break;
 
-                   case ("Civil"):
-                       CopyReadAssets("ING_Ingenieria_Civil.pdf");
-                       break;
+                    case ("Civil"):
+                        CopyReadAssets("ING_Ingenieria_Civil.pdf");
+                        break;
 
-                   case ("Electrónica"):
-                       CopyReadAssets("ING_Ingenieria_Electronica.pdf");
-                       break;
+                    case ("Electrónica"):
+                        CopyReadAssets("ING_Ingenieria_Electronica.pdf");
+                        break;
 
-                   case ("Industrial"):
-                       CopyReadAssets("ING_Ingenieria_Industrial.pdf");
-                       break;
+                    case ("Industrial"):
+                        CopyReadAssets("ING_Ingenieria_Industrial.pdf");
+                        break;
 
-                   case ("Mecánica"):
-                       CopyReadAssets("ING_Ingenieria_Mecanica.pdf");
-                       break;
+                    case ("Mecánica"):
+                        CopyReadAssets("ING_Ingenieria_Mecanica.pdf");
+                        break;
 
-                   case ("Mecánica Industrial"):
-                       CopyReadAssets("ING_Ingenieria_Mecanica-industrial.pdf");
-                       break;
+                    case ("Mecánica Industrial"):
+                        CopyReadAssets("ING_Ingenieria_Mecanica-industrial.pdf");
+                        break;
 
-                   case ("Mecatrónica"):
-                       CopyReadAssets("ING_Ingenieria_Mecatronica.pdf");
-                       break;
+                    case ("Mecatrónica"):
+                        CopyReadAssets("ING_Ingenieria_Mecatronica.pdf");
+                        break;
 
-                   case ("Química"):
-                       CopyReadAssets("ING_Ingenieria_Quimica.pdf");
-                       break;
+                    case ("Química"):
+                        CopyReadAssets("ING_Ingenieria_Quimica.pdf");
+                        break;
 
-                   case ("Química industrial"):
-                       CopyReadAssets("ING_Ingenieria-Quimica-Industrial.pdf");
-                       break;
+                    case ("Química industrial"):
+                        CopyReadAssets("ING_Ingenieria-Quimica-Industrial.pdf");
+                        break;
 
-               }
+                }
 
 
             }
@@ -136,5 +139,27 @@ public class CarrerasIngenieria extends ActionBarActivity{
         {
             out.write(buffer, 0, read);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,5 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -12,10 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-/**
- * Created by Diego Jacobs on 05/08/2015.
- */
-public class Info extends ActionBarActivity {
+public class Info extends AppCompatActivity {
     private ListView mList;
     private String[] Lista = {"Carreras"};
     ArrayAdapter<String> adapter;
@@ -24,10 +27,10 @@ public class Info extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mList = (ListView) findViewById(R.id.LVInfo);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
@@ -48,7 +51,7 @@ public class Info extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_info, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -64,14 +67,7 @@ public class Info extends ActionBarActivity {
             return true;
         }
 
-        if(id == android.R.id.home)
-        {
-            Intent parentIntent = NavUtils.getParentActivityIntent(this);
-            parentIntent.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivity(parentIntent);
-            finish();
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
+
 }

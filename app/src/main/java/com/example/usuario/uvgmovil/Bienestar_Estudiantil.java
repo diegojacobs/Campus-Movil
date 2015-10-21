@@ -1,5 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -22,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class Bienestar_Estudiantil extends ActionBarActivity {
+public class Bienestar_Estudiantil extends AppCompatActivity {
     private ListView mList;
     private String[] Lista = {"Información","Agendar Cita","Referir Estudiante"};
     ArrayAdapter<String> adapter;
@@ -31,10 +37,8 @@ public class Bienestar_Estudiantil extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bienestar__estudiantil);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         mList = (ListView)findViewById(R.id.LVbienestar);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
@@ -50,20 +54,23 @@ public class Bienestar_Estudiantil extends ActionBarActivity {
                 }
                 if (clickedViewedView.getText() == "Agendar Cita") {
                     String url="https://docs.google.com/a/uvg.edu.gt/forms/d/1JffdoMlAjPO6FP-ZvCGbAD7ztCAadhtxtyFOdyu5h9s/viewform";
-                    Intent intent = new Intent(Bienestar_Estudiantil.this, Facebook.class);
+                    Intent intent = new Intent(Bienestar_Estudiantil.this, mWebBrowser.class);
                     intent.putExtra("direccion", url);
                     intent.putExtra("tittle", "Agendar Cita");
                     startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Referir Estudiante") {
                     String url="https://docs.google.com/a/uvg.edu.gt/forms/d/1HsHYgklTjxK912vRMLIq7DxP0m-aiu3nZ0Ll5MpxFGs/viewform";
-                    Intent intent = new Intent(Bienestar_Estudiantil.this, Facebook.class);
+                    Intent intent = new Intent(Bienestar_Estudiantil.this, mWebBrowser.class);
                     intent.putExtra("direccion", url);
                     intent.putExtra("tittle", "Referir Estudiante");
                     startActivity(intent);
                 }
             }
         });
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void CopyReadAssets(String filename)
@@ -110,7 +117,7 @@ public class Bienestar_Estudiantil extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_bienestar__estudiantil, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 

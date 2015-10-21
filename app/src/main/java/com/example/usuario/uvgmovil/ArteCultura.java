@@ -1,5 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -12,7 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ArteCultura extends ActionBarActivity {
+public class ArteCultura extends AppCompatActivity {
     private ListView mList;
     private String[] Lista = {"FanPage","Inscripcion"};
     ArrayAdapter<String> adapter;
@@ -20,11 +26,11 @@ public class ArteCultura extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.artecultura);
+        setContentView(R.layout.arte_cultura);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mList = (ListView)findViewById(R.id.LVartecultura);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
@@ -37,14 +43,14 @@ public class ArteCultura extends ActionBarActivity {
                 TextView clickedViewedView = (TextView) view;
                 if (clickedViewedView.getText() == "FanPage") {
                     String url = "https://www.facebook.com/arteyculturauvg";
-                    Intent intent = new Intent(ArteCultura.this, Facebook.class);
+                    Intent intent = new Intent(ArteCultura.this, mWebBrowser.class);
                     intent.putExtra("direccion", url);
                     intent.putExtra("tittle", "FanPage Arte y Cultura");
                     startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Inscripcion") {
                     String url = "https://docs.google.com/forms/d/15uxSJqhbeWZrtpV0Lo23gAKj0VhkU_BDxNAQGwUOB_w/viewform";
-                    Intent intent = new Intent(ArteCultura.this, Facebook.class);
+                    Intent intent = new Intent(ArteCultura.this, mWebBrowser.class);
                     intent.putExtra("direccion", url);
                     intent.putExtra("tittle", "Inscripcion");
                     startActivity(intent);
@@ -56,7 +62,7 @@ public class ArteCultura extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_arte_cultura, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -74,4 +80,5 @@ public class ArteCultura extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

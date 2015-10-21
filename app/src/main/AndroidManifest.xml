@@ -3,10 +3,11 @@
     package="com.example.usuario.uvgmovil" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="22" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <!--
  The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but are recommended.
@@ -23,129 +24,57 @@
         android:icon="@drawable/uvg_50a"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+>
         <activity
             android:name=".Principal"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_principal"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".Pago"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_pago"
+            android:parentActivityName=".Principal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
         </activity>
         <activity
             android:name=".InfoPago"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".News"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".TorneosInternos"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".UVGHoy"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Fut4_est"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Deportes"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Entrenos_Deportivos"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Baloncesto"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Volley"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Fut4_col"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_info_pago"
+            android:parentActivityName=".Pago"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Pago" />
         </activity>
         <activity
             android:name=".Info"
-            android:label="@string/title_activity_info" >
+            android:label="@string/title_activity_info"
+            android:parentActivityName=".Principal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
         </activity>
         <activity
-            android:name=".Carreras"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Carrerasb"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Comunidad_UVG"
-            android:label="@string/title_activity_comunidad__uvg" >
-
-        </activity>
-        <activity
-            android:name=".Bienestar_Estudiantil"
-            android:label="@string/title_activity_bienestar__estudiantil" >
-        </activity>
-        <activity
-            android:name=".Asociaciones"
-            android:label="@string/title_activity_asociaciones" >
-        </activity>
-        <activity
-            android:name=".AssetsManager"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Egresados"
-            android:label="@string/title_activity_egresados" >
-        </activity>
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-
-        <activity
-            android:name=".Facebook"
-            android:label="@string/title_activity_facebook" >
-        </activity>
-        <activity
-            android:name=".ArteCultura"
-            android:label="@string/title_activity_arte_cultura" >
-        </activity>
-        <activity
-            android:name=".NoticiasCI"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".CarrerasIngenieria"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".CarrerasCCHH"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".CarrerasCCSS"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".CarrerasEDU"
-            android:label="@string/app_name" >
+            android:name=".News"
+            android:label="@string/title_activity_news"
+            android:parentActivityName=".Principal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
         </activity>
 
         <meta-data
@@ -156,8 +85,197 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".Carrerasb"
+            android:label="@string/title_activity_carrerasb"
+            android:parentActivityName=".Info"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Info" />
+        </activity>
+        <activity
+            android:name=".UVGHoy"
+            android:label="@string/title_activity_uvghoy"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.News" />
+        </activity>
+        <activity
+            android:name=".NoticiasCI"
+            android:label="@string/app_name" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Carrerasb" />
+        </activity>
+        <activity
+            android:name=".CarrerasIngenieria"
+            android:label="@string/title_activity_carrerasing" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Carrerasb" />
+        </activity>
+        <activity
+            android:name=".CarrerasCCHH"
+            android:label="@string/title_activity_carrerasCCHH" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Carrerasb" />
+        </activity>
+        <activity
+            android:name=".CarrerasCCSS"
+            android:label="@string/title_activity_carrerasCCSS" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Carrerasb" />
+        </activity>
+        <activity
+            android:name=".CarrerasEDU"
+            android:label="@string/title_activity_carrerasedu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Carrerasb" />
+        </activity>
+        <activity
+            android:name=".Comunidad_UVG"
+            android:label="@string/title_activity_comunidad__uvg"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.News" />
+        </activity>
+        <activity
+            android:name=".Bienestar_Estudiantil"
+            android:label="@string/title_activity_bienestar__estudiantil"
+            android:parentActivityName=".Comunidad_UVG"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Comunidad_UVG" />
+        </activity>
+        <activity
+            android:name=".mWebBrowser"
+            android:label="@string/title_activity_m_web_browser"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".Egresados"
+            android:label="@string/title_activity_egresados"
+            android:parentActivityName=".Comunidad_UVG"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Comunidad_UVG" />
+        </activity>
+        <activity
+            android:name=".Deportes"
+            android:label="@string/title_activity_deportes"
+            android:parentActivityName=".News"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.News" />
+        </activity>
+        <activity
+            android:name=".TorneosInternos"
+            android:label="@string/title_activity_torneos_internos"
+            android:parentActivityName=".Deportes"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Deportes" />
+        </activity>
+        <activity
+            android:name=".Entrenos_Deportivos"
+            android:label="@string/title_activity_entrenos__deportivos"
+            android:parentActivityName=".Deportes"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Deportes" />
+        </activity>
+        <activity
+            android:name=".Fut4_est"
+            android:label="@string/title_activity_fut4_est"
+            android:parentActivityName=".TorneosInternos"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.TorneosInternos" />
+        </activity>
+        <activity
+            android:name=".Fut4_col"
+            android:label="@string/title_activity_fut4_col"
+            android:parentActivityName=".TorneosInternos"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.TorneosInternos" />
+        </activity>
+        <activity
+            android:name=".Baloncesto"
+            android:label="@string/title_activity_baloncesto"
+            android:parentActivityName=".TorneosInternos"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.TorneosInternos" />
+        </activity>
+        <activity
+            android:name=".Volley"
+            android:label="@string/title_activity_volley"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.TorneosInternos" />
+        </activity>
+        <activity
+            android:name=".Asociaciones"
+            android:label="@string/title_activity_asociaciones"
+            android:parentActivityName=".Comunidad_UVG"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Comunidad_UVG" />
+        </activity>
+        <activity
+            android:name=".ArteCultura"
+            android:label="@string/title_activity_arte_cultura"
+            android:parentActivityName=".Comunidad_UVG"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Comunidad_UVG" />
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+
+        <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" >
+
+            <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+            <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key" />
+        </activity>
+
+        <activity
+            android:name=".Portal"
+            android:label="@string/title_activity_portal"
+            android:parentActivityName=".Principal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
         </activity>
     </application>
 

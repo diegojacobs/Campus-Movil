@@ -1,5 +1,13 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -18,10 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- * Created by Diego Jacobs on 27/07/2015.
- */
-public class TorneosInternos extends ActionBarActivity {
+public class TorneosInternos extends AppCompatActivity {
     private ListView mList;
     private String[] Lista = {"Futbol 4 Estudiantes","Baloncesto Mixto","Futbol 4 Colaboladores","Voleibol Mixto","Reglamento"};
     ArrayAdapter<String> adapter;
@@ -29,12 +34,9 @@ public class TorneosInternos extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.torneosinternos);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+        setContentView(R.layout.torneos_internos);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         mList = (ListView)findViewById(R.id.LVtorneos);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
@@ -63,7 +65,9 @@ public class TorneosInternos extends ActionBarActivity {
             }
         });
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
     public void CopyReadAssets(String filename)
     {
         AssetManager assetManager = getAssets();
@@ -105,6 +109,26 @@ public class TorneosInternos extends ActionBarActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 }
-

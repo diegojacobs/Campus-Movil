@@ -1,5 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -20,7 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class Egresados extends ActionBarActivity {
+public class Egresados extends AppCompatActivity {
     private ListView mList;
     private String[] Lista = {"Actualizar Datos","Feria del Empleo","Bolsa del Empleo"};
     ArrayAdapter<String> adapter;
@@ -29,10 +35,8 @@ public class Egresados extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.egresados);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         mList = (ListView)findViewById(R.id.LVegresados);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
@@ -45,14 +49,14 @@ public class Egresados extends ActionBarActivity {
                 TextView clickedViewedView = (TextView) view;
                 if (clickedViewedView.getText() == "Bolsa del Empleo") {
                     String url="http://www.uvg.edu.gt/vidaestudiantil/egresados/empleo.html";
-                    Intent intent = new Intent(Egresados.this, Facebook.class);
+                    Intent intent = new Intent(Egresados.this, mWebBrowser.class);
                     intent.putExtra("direccion", url);
                     intent.putExtra("tittle", "Bolsa del Empleo");
                     startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Feria del Empleo") {
                     String url="http://www.uvg.edu.gt/vidaestudiantil/egresados/feria.html";
-                    Intent intent = new Intent(Egresados.this, Facebook.class);
+                    Intent intent = new Intent(Egresados.this, mWebBrowser.class);
                     intent.putExtra("direccion", url);
                     intent.putExtra("tittle", "Feria del Empleo");
                     startActivity(intent);
@@ -63,6 +67,10 @@ public class Egresados extends ActionBarActivity {
                 }
             }
         });
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void CopyReadAssets(String filename)
@@ -109,7 +117,7 @@ public class Egresados extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_egresados, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 

@@ -1,22 +1,24 @@
 package com.example.usuario.uvgmovil;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.AssetManager;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.res.AssetManager;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.support.v7.app.ActionBarActivity;
+        import android.util.Log;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.AdapterView;
+        import android.widget.ArrayAdapter;
+        import android.widget.ListView;
+        import android.widget.TextView;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+        import java.io.File;
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.OutputStream;
 
 /**
  * Created by Roberto Chiroy on 09/09/2015.
@@ -44,44 +46,44 @@ public class CarrerasCCHH extends ActionBarActivity{
         //Creamos el OnClick para nuestra Lista
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-           public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
                 TextView clickedViewedView = (TextView) view;
-               switch ((String)clickedViewedView.getText()){
+                switch ((String)clickedViewedView.getText()){
 
-                   case ("Admin Turismo Sostenible"):
-                       CopyReadAssets("CCHH_Admin Turismo Sostenible.pdf");
-                       break;
+                    case ("Admin Turismo Sostenible"):
+                        CopyReadAssets("CCHH_Admin Turismo Sostenible.pdf");
+                        break;
 
-                   case ("Biologia"):
-                       CopyReadAssets("CCHH_Biologia.pdf");
-                       break;
+                    case ("Biologia"):
+                        CopyReadAssets("CCHH_Biologia.pdf");
+                        break;
 
-                   case ("Bioquimica y Microbiologia"):
-                       CopyReadAssets("CCHH_Bioquimica_y_Microbiologia.pdf");
-                       break;
+                    case ("Bioquimica y Microbiologia"):
+                        CopyReadAssets("CCHH_Bioquimica_y_Microbiologia.pdf");
+                        break;
 
-                   case ("Fisica"):
-                       CopyReadAssets("CCHH_Fisica.pdf");
-                       break;
+                    case ("Fisica"):
+                        CopyReadAssets("CCHH_Fisica.pdf");
+                        break;
 
-                   case ("Matematica"):
-                       CopyReadAssets("CCHH_Matematica.pdf");
-                       break;
-                   case ("Letras"):
-                       CopyReadAssets("CCHH_Letras.pdf");
-                       break;
-                   case ("Nutrición"):
-                       CopyReadAssets("CCHH_Nutricion.pdf");
-                       break;
-                   case ("Química"):
-                       CopyReadAssets("CCHH_Quimica.pdf");
-                       break;
-                   case ("Química Farmacéutica"):
-                       CopyReadAssets("CCHH_Quimica_Farmaceutica.pdf");
-                       break;
-               }
+                    case ("Matematica"):
+                        CopyReadAssets("CCHH_Matematica.pdf");
+                        break;
+                    case ("Letras"):
+                        CopyReadAssets("CCHH_Letras.pdf");
+                        break;
+                    case ("Nutrición"):
+                        CopyReadAssets("CCHH_Nutricion.pdf");
+                        break;
+                    case ("Química"):
+                        CopyReadAssets("CCHH_Quimica.pdf");
+                        break;
+                    case ("Química Farmacéutica"):
+                        CopyReadAssets("CCHH_Quimica_Farmaceutica.pdf");
+                        break;
+                }
 
-           }
+            }
         });
     }
 
@@ -123,5 +125,27 @@ public class CarrerasCCHH extends ActionBarActivity{
         {
             out.write(buffer, 0, read);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

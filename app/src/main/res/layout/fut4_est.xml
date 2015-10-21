@@ -1,185 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context="com.example.usuario.uvgmovil.Fut4_est">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_weight="0.37">
+    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Fubol 4 Estudiantes"
-            android:id="@+id/textView21"
-            android:textStyle="bold"
-            android:textSize="35sp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"/>
-    </LinearLayout>
+        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="56">
+    </android.support.design.widget.AppBarLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_weight="10"
-            android:background="#ff0020ff">
+    <include layout="@layout/content_fut4_est" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="POS"
-                android:id="@+id/textView14"
-                android:layout_weight="10"
-                android:textColor="#ff000000"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Equipo"
-                android:id="@+id/textView15"
-                android:layout_weight="40"
-                android:textColor="#ff000000" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="PJ"
-                android:id="@+id/textView16"
-                android:layout_weight="10"
-                android:textColor="#ff000000"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="PG"
-                android:id="@+id/textView17"
-                android:layout_weight="10"
-                android:textColor="#ff000000"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="PE"
-                android:id="@+id/textView18"
-                android:layout_weight="10"
-                android:textColor="#ff000000"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="PP"
-                android:id="@+id/textView19"
-                android:layout_weight="10"
-                android:textColor="#ff000000"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Pts"
-                android:id="@+id/textView20"
-                android:layout_weight="10"
-                android:textColor="#ff000000"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff0ed6ff"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff7bfff3"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff0ed6ff"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff7bfff3"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff0ed6ff"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff7bfff3"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff0ed6ff"
-            android:layout_weight="10">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ff7bfff3"
-            android:layout_weight="10">
-
-        </TableRow>
-    </TableLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="3.20">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver Reglas e Inscripción"
-            android:id="@+id/Btnfut4_est"
-            android:gravity="center"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"/>
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

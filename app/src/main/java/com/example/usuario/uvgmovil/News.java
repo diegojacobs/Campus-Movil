@@ -1,5 +1,11 @@
 package com.example.usuario.uvgmovil;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,11 +17,7 @@ import android.widget.ListView;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-/**
- * Created by Diego Jacobs on 26/07/2015.
- */
-public class News extends ActionBarActivity {
-
+public class News extends AppCompatActivity {
     private ListView mList;
     private String[] Lista = {"UVG Hoy","Deportes UVG","Comunidad UVG","Centro de investigaciones"};
     ArrayAdapter<String> adapter;
@@ -24,10 +26,10 @@ public class News extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mList = (ListView)findViewById(R.id.LVnews);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,Lista); //Creamos el adapter con el tipo de lista que queremos y la Lista
@@ -56,4 +58,5 @@ public class News extends ActionBarActivity {
             }
         });
     }
+
 }
