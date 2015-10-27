@@ -78,7 +78,7 @@ public class Principal extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Proximamente...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -97,6 +97,23 @@ public class Principal extends AppCompatActivity {
                 startActivity(i);
             }
         }
+    }
+
+    public void onBackPressed() {
+
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+
+            this.finish();
+            System.exit(0);
+
+        } else {
+            getFragmentManager().popBackStack();
+        }
+
     }
 
     @Override

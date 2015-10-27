@@ -25,6 +25,7 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
     private JSONParser jParser = new JSONParser();
 
     private String url_all_empresas = "http://uvgmobil.host22.com/uvgmobil/get_all_students.php";
+    //private String url_all_empresas = "http://uvgmobil.host22.com/uvgmobil/get_student_by_email.php";
 
     // JSON Node names
     private String TAG_SUCCESS = "success";
@@ -52,7 +53,6 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
     private ArrayList parqueos = new ArrayList();
     private ArrayList mapasC = new ArrayList();
     private ArrayList horarios = new ArrayList();;
-
 
     //Constructor
     public LoadAllUsers(){
@@ -134,6 +134,7 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
     protected String doInBackground(String... args) {
         // Building Parameters
         List params = new ArrayList();
+
         // getting JSON string from URL
         JSONObject json = jParser.makeHttpRequest(url_all_empresas, "GET", params);
 
