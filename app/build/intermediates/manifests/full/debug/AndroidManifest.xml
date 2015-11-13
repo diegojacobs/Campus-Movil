@@ -288,6 +288,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usuario.uvgmovil.Principal" />
         </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.mImages"
+            android:label="@string/title_activity_m_images"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.ConsultaSaldo"
+            android:label="@string/title_activity_consulta_saldo"
+            android:parentActivityName="com.example.usuario.uvgmovil.InfoPago"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Pago" />
+        </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

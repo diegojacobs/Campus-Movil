@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                 EditText usuario = (EditText) findViewById(R.id.TUsuarioIngresado);
                 EditText password = (EditText) findViewById(R.id.TPassIngresado);
-                String usuarioIngresado = usuario.getText().toString();
+                String usuarioIngresado = usuario.getText().toString().trim();
                 String passwordIngresado = password.getText().toString();
 
                 if (emails.contains(usuarioIngresado)) {

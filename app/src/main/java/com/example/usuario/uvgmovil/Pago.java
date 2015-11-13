@@ -63,6 +63,17 @@ public class Pago extends AppCompatActivity {
                 if (clickedViewedView.getText() == "Informacion de Pago") {
                     startActivity(new Intent(Pago.this, InfoPago.class));
                 }
+                if (clickedViewedView.getText() == "Consulta de Saldo") {
+                    //validamos que haya hecho login
+                    UserConfigs conf = new UserConfigs(Pago.this);
+                    if (!conf.getEmail().equals("correo")) {
+                        startActivity(new Intent(Pago.this, ConsultaSaldo.class));
+
+                    } else {
+                        Intent i = new Intent(Pago.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
+                        startActivity(i);
+                    }
+                }
             }
         });
 
@@ -145,3 +156,4 @@ public class Pago extends AppCompatActivity {
     }
 
 }
+

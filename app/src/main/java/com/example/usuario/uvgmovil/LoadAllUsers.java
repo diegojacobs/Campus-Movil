@@ -25,6 +25,7 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
     private JSONParser jParser = new JSONParser();
 
     private String url_all_empresas = "http://uvgmobil.host22.com/uvgmobil/get_all_students.php";
+    private String url_all_saldos = "http://uvgmobil.host22.com/uvgmobil/get_all_saldos.php";
     //private String url_all_empresas = "http://uvgmobil.host22.com/uvgmobil/get_student_by_email.php";
 
     // JSON Node names
@@ -41,8 +42,20 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
     private  String TAG_MAPAC = "mapacurricular";
     private  String TAG_HORARIO = "horario";
 
+    // Tabla saldos
+    private String TAG_SALDOS = "saldos";
+    private String TAG_C_SALDO_VENCIDO = "concepto_saldo_vencido";
+    private String TAG_SALDO_VENCIDO = "saldo_vencido";
+    private String TAG_C_SALDO_P_VENCER = "concepto_saldo_por_vencer";
+    private String TAG_SALDO_P_VENCER = "saldo_por_vencer";
+    private String TAG_SALDO_P_CARGAR = "saldo_por_cargar";
+
+
     // products JSONArray
     private JSONArray products = null;
+
+    // saldos JSONArray
+    private JSONArray saldos = null;
 
     private ArrayList carnets = new ArrayList();
     private ArrayList names = new ArrayList();
@@ -53,6 +66,15 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
     private ArrayList parqueos = new ArrayList();
     private ArrayList mapasC = new ArrayList();
     private ArrayList horarios = new ArrayList();;
+
+    // ArrayList Saldos
+    private ArrayList carnets_saldos = new ArrayList();
+    private ArrayList c_saldo_vencido = new ArrayList();
+    private ArrayList saldo_vencido = new ArrayList();
+    private ArrayList c_saldo_p_vencer = new ArrayList();
+    private ArrayList saldo_p_vencer = new ArrayList();
+    private ArrayList saldo_p_cargar = new ArrayList();
+
 
     //Constructor
     public LoadAllUsers(){
@@ -131,6 +153,55 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
         this.carreras = carreras;
     }
 
+    // Saldos
+    public ArrayList getCarnets_saldos() {
+        return carnets_saldos;
+    }
+
+    public void setCarnets_saldos(ArrayList carnets_saldos) {
+        this.carnets_saldos = carnets_saldos;
+    }
+
+    public ArrayList getC_saldo_vencido() {
+        return c_saldo_vencido;
+    }
+
+    public void setC_saldo_vencido(ArrayList c_saldo_vencido) {
+        this.c_saldo_vencido = c_saldo_vencido;
+    }
+
+    public ArrayList getSaldo_vencido() {
+        return saldo_vencido;
+    }
+
+    public void setSaldo_vencido(ArrayList saldo_vencido) {
+        this.saldo_vencido = saldo_vencido;
+    }
+
+    public ArrayList getC_saldo_p_vencer() {
+        return c_saldo_p_vencer;
+    }
+
+    public void setC_saldo_p_vencer(ArrayList c_saldo_p_vencer) {
+        this.c_saldo_p_vencer = c_saldo_p_vencer;
+    }
+
+    public ArrayList getSaldo_p_vencer() {
+        return saldo_p_vencer;
+    }
+
+    public void setSaldo_p_vencer(ArrayList saldo_p_vencer) {
+        this.saldo_p_vencer = saldo_p_vencer;
+    }
+
+    public ArrayList getSaldo_p_cargar() {
+        return saldo_p_cargar;
+    }
+
+    public void setSaldo_p_cargar(ArrayList saldo_p_cargar) {
+        this.saldo_p_cargar = saldo_p_cargar;
+    }
+
     protected String doInBackground(String... args) {
         // Building Parameters
         List params = new ArrayList();
@@ -178,6 +249,52 @@ public class LoadAllUsers extends AsyncTask<String, String, String>{
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return null;
+
+        // Saldos
+        // Building Parameters
+        params = new ArrayList();
+
+        // getting JSON string from URL
+        json = jParser.makeHttpRequest(url_all_saldos, "GET", params);
+
+        // Check your log cat for JSON reponse
+        Log.d("All Saldos: ", json.toString());
+
+        try {
+            // Checking for SUCCESS TAG
+            int success = json.getInt(TAG_SUCCESS);
+
+            if (success == 1) {
+                // Saldos found
+                // Getting Array of Products
+                saldos = json.getJSONArray(TAG_SALDOS);
+
+                // looping through All Saldos
+                for (int i = 0; i < saldos.length(); i++) {
+
+                    JSONObject c = saldos.getJSONObject(i);
+
+                    // Storing each json item in variable
+                    String s_carnet = c.getString(TAG_CARNET);
+                    String s_c_saldo_vencido = c.getString(TAG_C_SALDO_VENCIDO);
+                    String s_saldo_vencido = c.getString(TAG_SALDO_VENCIDO);
+                    String s_c_saldo_p_vencer = c.getString(TAG_C_SALDO_P_VENCER);
+                    String s_saldo_p_vencer = c.getString(TAG_SALDO_P_VENCER);
+                    String s_saldo_p_cargar = c.getString(TAG_SALDO_P_CARGAR);
+
+                    carnets_saldos.add(s_carnet);
+                    c_saldo_vencido.add(s_c_saldo_vencido);
+                    saldo_vencido.add(s_saldo_vencido);
+                    c_saldo_p_vencer.add(s_c_saldo_p_vencer);
+                    saldo_p_vencer.add(s_saldo_p_vencer);
+                    saldo_p_cargar.add(s_saldo_p_cargar);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return "finish";
     }
+
 }

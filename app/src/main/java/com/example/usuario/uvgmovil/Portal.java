@@ -1,5 +1,6 @@
 package com.example.usuario.uvgmovil;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -58,10 +59,16 @@ public class Portal extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
                 TextView clickedViewedView = (TextView) view;
                 if (clickedViewedView.getText() == "Mi Horario") {
-                    //startActivity(new Intent(Portal.this, UVGHoy.class));
+                    Intent intent = new Intent(Portal.this, mImages.class);
+                    intent.putExtra("direccion", "http://simplifiedcoding.16mb.com/ImageUpload/getImage.php?id=15");
+                    intent.putExtra("tittle", "Mi Horario");
+                    startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Mi Mapa Curricular") {
-                    //startActivity(new Intent(Portal.this, Deportes.class));
+                    Intent intent = new Intent(Portal.this, mImages.class);
+                    intent.putExtra("direccion", "http://simplifiedcoding.16mb.com/ImageUpload/getImage.php?id=15");
+                    intent.putExtra("tittle", "Mi Mapa Curricular");
+                    startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Mi Parqueo") {
                     //startActivity(new Intent(Portal.this, Comunidad_UVG.class));

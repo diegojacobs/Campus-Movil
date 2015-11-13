@@ -34,4 +34,9 @@
     <string name="title_activity_arte_cultura">Arte y Cultura</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_portal">Portal</string>
+    <string name="title_activity_m_images">mImages</string>
+    <string name="title_activity_consulta_saldo">ConsultaSaldo</string>
+    <string name="saldo_vencido">Saldo vencido:</string>
+    <string name="saldo_p_vencer">Saldo por vencer:</string>
+    <string name="saldo_p_cargar">Saldo por cargar:</string>
 </resources>

@@ -17,7 +17,7 @@
 
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -259,7 +259,6 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" >
-
             <meta-data
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version" />
@@ -267,7 +266,6 @@
                 android:name="com.google.android.geo.API_KEY"
                 android:value="@string/google_maps_key" />
         </activity>
-
         <activity
             android:name=".Portal"
             android:label="@string/title_activity_portal"
@@ -276,6 +274,20 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usuario.uvgmovil.Principal" />
+        </activity>
+        <activity
+            android:name=".mImages"
+            android:label="@string/title_activity_m_images"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".ConsultaSaldo"
+            android:label="@string/title_activity_consulta_saldo"
+            android:parentActivityName=".InfoPago"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Pago" />
         </activity>
     </application>
 
