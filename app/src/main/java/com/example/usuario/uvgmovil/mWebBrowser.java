@@ -1,6 +1,7 @@
 package com.example.usuario.uvgmovil;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -40,6 +42,7 @@ public class mWebBrowser extends AppCompatActivity {
         mWBfb = (WebView) findViewById(R.id.WVfb);
         mWBfb.setWebViewClient(new MyBrowser());
         mWBfb.getSettings().setJavaScriptEnabled(true);
+        mWBfb.getSettings().supportZoom();
         mWBfb.loadUrl(bundle.getString("direccion"));
     }
 
@@ -51,9 +54,31 @@ public class mWebBrowser extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        if(mWBfb.canGoBack()) {
+            mWBfb.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+
+        UserConfigs conf = new UserConfigs(this);
+        if (conf.getEmail().equals("correo"))
+            menu.findItem(R.id.action_signout).setTitle("Sign In");
+        else
+            menu.findItem(R.id.action_signout).setTitle("Sign Out");
+
         return true;
     }
 
@@ -67,6 +92,20 @@ public class mWebBrowser extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if (id == R.id.action_signout) {
+            UserConfigs conf = new UserConfigs(this);
+            conf.setEmail("correo");
+            conf.setNotifications(true);
+
+            Intent i = new Intent(mWebBrowser.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
+            startActivity(i);
+            return true;
+        }
+
+        if (id==android.R.id.home) {
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

@@ -27,8 +27,6 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded(14.604143, -90.492913, "Parqueo 1");
-
-        setUpMapIfNeeded(14.605336, -90.487785, "Parqueo 9");
     }
 
     @Override

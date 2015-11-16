@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,8 @@ public class Principal extends AppCompatActivity {
     ImageView mBtnInfo;
     ImageView mBtnMap;
     ImageView mBtnPortal;
+    ImageView mBtnBB;
+    ImageView mBtnPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +38,27 @@ public class Principal extends AppCompatActivity {
         mBtnInfo = (ImageView) findViewById(R.id.BtnInfo);
         mBtnMap = (ImageView) findViewById(R.id.BtnMap);
         mBtnPortal = (ImageView) findViewById(R.id.BtnPortal);
-
+        mBtnBB = (ImageView) findViewById(R.id.BtnBB);
+        mBtnPhone = (ImageView) findViewById(R.id.BtnContact);
 
         //Boton de Pago
         mBtnPago.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         startActivity(new Intent(Principal.this, Pago.class));
+                    }
+                }
+        );
+
+        //Boton de Blackboard
+        mBtnBB.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        String url="https://uvg.blackboard.com";
+                            Intent intent = new Intent(Principal.this, mWebBrowser.class);
+                        intent.putExtra("direccion", url);
+                        intent.putExtra("tittle", "BlackBoard");
+                        startActivity(intent);
                     }
                 }
         );
@@ -74,6 +91,15 @@ public class Principal extends AppCompatActivity {
                 }
         );
 
+        //Boton de Contacto
+        mBtnPhone.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        startActivity(new Intent(Principal.this, Contacto.class));
+                    }
+                }
+        );
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +108,8 @@ public class Principal extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
 
     //Boton de Portal
@@ -95,31 +123,40 @@ public class Principal extends AppCompatActivity {
             } else {
                 Intent i = new Intent(Principal.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
                 startActivity(i);
+                finish();
             }
         }
     }
-
-    public void onBackPressed() {
-
-        int count = getFragmentManager().getBackStackEntryCount();
-
-        if (count == 0) {
-            super.onBackPressed();
-            //additional code
-
-            this.finish();
+/*
+    @Override
+    public boolean onKeyUp( int keyCode, KeyEvent event )
+    {
+        if( keyCode == KeyEvent.KEYCODE_BACK )
+        {
             System.exit(0);
-
-        } else {
-            getFragmentManager().popBackStack();
+            return true;
         }
-
+        return super.onKeyUp( keyCode, event );
     }
-
+*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+
+        UserConfigs conf = new UserConfigs(this);
+        if (conf.getEmail().equals("correo"))
+            menu.findItem(R.id.action_signout).setTitle("Sign In");
+        else
+            menu.findItem(R.id.action_signout).setTitle("Sign Out");
+
         return true;
     }
 
@@ -135,6 +172,8 @@ public class Principal extends AppCompatActivity {
             return true;
         }
 
+
+
         if (id == R.id.action_signout) {
             UserConfigs conf = new UserConfigs(this);
             conf.setEmail("correo");
@@ -142,6 +181,7 @@ public class Principal extends AppCompatActivity {
 
             Intent i = new Intent(Principal.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
             startActivity(i);
+            finish();
             return true;
         }
 

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:2:1-294:12
+ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:2:1-303:12
 	package
 		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:3:5-43
 		INJECTED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml
@@ -84,7 +84,7 @@ MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\Usuario\D
 	android:required
 		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:20:9-32
 application
-ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:22:5-292:19
+ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:22:5-301:19
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Usuario\Documents\UVGMovil2.0\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Usuario\Documents\UVGMovil2.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services:8.1.0] C:\Users\Usuario\Documents\UVGMovil2.0\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\8.1.0\AndroidManifest.xml:19:5-20
@@ -536,6 +536,16 @@ ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.x
 		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:287:13-56
 	android:name
 		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:284:13-42
+activity#com.example.usuario.uvgmovil.Contacto
+ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:292:9-300:20
+	android:label
+		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:294:13-60
+	android:parentActivityName
+		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:295:13-52
+	android:theme
+		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:296:13-56
+	android:name
+		ADDED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml:293:13-37
 uses-sdk
 INJECTED from C:\Users\Usuario\Documents\UVGMovil2.0\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Usuario\Documents\UVGMovil2.0\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:20:5-43

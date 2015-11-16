@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent i = new Intent(MainActivity.this, Principal.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
             startActivity(i);
+            finish();
         }
     }
     public void OnClickButton(View v) {
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent i = new Intent(MainActivity.this, Principal.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
                         startActivity(i);                                       // lanza la nueva actividad
+                        finish();
                     }
                     else
                         Toast.makeText(this,"Password erroneo",Toast.LENGTH_LONG).show();
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId()==R.id.BtnInvitado){
             Intent i = new Intent(MainActivity.this, Principal.class);
             startActivity(i);
+            finish();
         }
     }
 

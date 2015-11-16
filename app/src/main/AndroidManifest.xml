@@ -289,6 +289,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usuario.uvgmovil.Pago" />
         </activity>
+        <activity
+            android:name=".Contacto"
+            android:label="@string/title_activity_contacto"
+            android:parentActivityName=".Principal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
+        </activity>
     </application>
 
 </manifest>

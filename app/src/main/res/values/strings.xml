@@ -39,4 +39,5 @@
     <string name="saldo_vencido">Saldo vencido:</string>
     <string name="saldo_p_vencer">Saldo por vencer:</string>
     <string name="saldo_p_cargar">Saldo por cargar:</string>
+    <string name="title_activity_contacto">Contacto</string>
 </resources>
