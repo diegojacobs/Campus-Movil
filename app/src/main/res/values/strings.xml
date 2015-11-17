@@ -40,4 +40,8 @@
     <string name="saldo_p_vencer">Saldo por vencer:</string>
     <string name="saldo_p_cargar">Saldo por cargar:</string>
     <string name="title_activity_contacto">Contacto</string>
+    <string name="title_activity_consulta_parqueo">ConsultaParqueo</string>
+    <string name="parqueo_asignado">Parqueo asignado:</string>
+    <string name="title_activity_consulta_notas">Consulta Notas</string>
+    <string name="codigo_curso">Mi Rendimiento:</string>
 </resources>

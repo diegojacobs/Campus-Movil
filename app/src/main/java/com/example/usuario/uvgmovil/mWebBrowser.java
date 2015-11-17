@@ -1,6 +1,7 @@
 package com.example.usuario.uvgmovil;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.annotation.TargetApi;
@@ -43,6 +46,9 @@ public class mWebBrowser extends AppCompatActivity {
         mWBfb.setWebViewClient(new MyBrowser());
         mWBfb.getSettings().setJavaScriptEnabled(true);
         mWBfb.getSettings().supportZoom();
+        mWBfb.getSettings().setBuiltInZoomControls(true);
+        mWBfb.getSettings().setLoadWithOverviewMode(true);
+        mWBfb.getSettings().setUseWideViewPort(true);
         mWBfb.loadUrl(bundle.getString("direccion"));
     }
 

@@ -37,7 +37,7 @@ import java.util.List;
 public class Portal extends AppCompatActivity {
 
     private ListView mList;
-    private String[] Lista = {"Mi Horario","Mi Mapa Curricular","Mi Parqueo"};
+    private String[] Lista = {"Mi Horario","Mi Mapa Curricular","Mi Parqueo","Mis Notas"};
     ArrayAdapter<String> adapter;
 
     @Override
@@ -59,19 +59,34 @@ public class Portal extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
                 TextView clickedViewedView = (TextView) view;
                 if (clickedViewedView.getText() == "Mi Horario") {
-                    Intent intent = new Intent(Portal.this, mImages.class);
-                    intent.putExtra("direccion", "http://simplifiedcoding.16mb.com/ImageUpload/getImage.php?id=15");
+                    Intent intent = new Intent(Portal.this, mWebBrowser.class);
+                    intent.putExtra("direccion", "http://uvgmobil.host22.com/uvgmobil/viewImage.php");
                     intent.putExtra("tittle", "Mi Horario");
                     startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Mi Mapa Curricular") {
-                    Intent intent = new Intent(Portal.this, mImages.class);
-                    intent.putExtra("direccion", "http://simplifiedcoding.16mb.com/ImageUpload/getImage.php?id=15");
+                    Intent intent = new Intent(Portal.this, mWebBrowser.class);
+                    intent.putExtra("direccion", "http://uvgmobil.host22.com/uvgmobil/viewMapa.php");
                     intent.putExtra("tittle", "Mi Mapa Curricular");
                     startActivity(intent);
                 }
                 if (clickedViewedView.getText() == "Mi Parqueo") {
                     //startActivity(new Intent(Portal.this, Comunidad_UVG.class));
+                    //validamos que haya hecho login
+                    UserConfigs conf = new UserConfigs(Portal.this);
+                    if (!conf.getEmail().equals("correo")) {
+                        startActivity(new Intent(Portal.this, ConsultaParqueo.class));
+
+                    } else {
+                        Intent i = new Intent(Portal.this, MainActivity.class); // nuevo intent para la actividad nueva, el .class es el nombre del java de la actividad
+                        startActivity(i);
+                    }
+                }
+                if(clickedViewedView.getText() == "Mis Notas"){
+                    //validamos que haya hecho login
+                    UserConfigs conf = new UserConfigs(Portal.this);
+                    startActivity(new Intent(Portal.this, ConsultaNotas.class));
+
                 }
             }
         });

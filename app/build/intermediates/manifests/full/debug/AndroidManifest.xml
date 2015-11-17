@@ -8,6 +8,7 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="22" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -310,6 +311,40 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usuario.uvgmovil.Principal" />
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.Calendario"
+            android:label="Calendario"
+            android:parentActivityName="com.example.usuario.uvgmovil.Principal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.Evento"
+            android:label="Evento"
+            android:parentActivityName="com.example.usuario.uvgmovil.Calendario" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Calendario" />
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.ConsultaParqueo"
+            android:label="@string/title_activity_consulta_parqueo"
+            android:parentActivityName="com.example.usuario.uvgmovil.Portal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Portal" />
+        </activity>
+        <activity
+            android:name="com.example.usuario.uvgmovil.ConsultaNotas"
+            android:label="@string/title_activity_consulta_notas"
+            android:parentActivityName="com.example.usuario.uvgmovil.Portal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Portal" />
         </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity

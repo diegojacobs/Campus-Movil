@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="2368-8307"
-            android:id="@+id/textView25"
+            android:autoLink="phone"
+            android:id="@+id/TVtelSG"
             android:textStyle="bold"
             android:textIsSelectable="true"
             android:layout_below="@+id/textView28"
@@ -35,9 +36,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="svsuruy@uvg.edu.gt"
-            android:id="@+id/textView26"
+            android:id="@+id/TVmailSG"
             android:textStyle="bold"
-            android:layout_below="@+id/textView25"
+            android:layout_below="@+id/TVtelSG"
             android:layout_centerHorizontal="true"
             android:textIsSelectable="true" />
 
@@ -50,7 +51,7 @@
             android:textColor="#289906"
             android:textStyle="bold"
             android:textSize="34sp"
-            android:layout_below="@+id/textView26"
+            android:layout_below="@+id/TVmailSG"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -73,7 +74,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="2368-8328"
-            android:id="@+id/textView29"
+            android:autoLink="phone"
+            android:id="@+id/TVtelFI"
             android:textStyle="bold"
             android:layout_below="@+id/textView27"
             android:layout_centerHorizontal="true" />
@@ -83,10 +85,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="ingenieria@uvg.edu.gt"
-            android:id="@+id/textView30"
+            android:id="@+id/TVmailFI"
             android:textStyle="bold"
             android:textIsSelectable="true"
-            android:layout_below="@+id/textView29"
+            android:layout_below="@+id/TVtelFI"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -95,7 +97,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Facultad de Educación"
             android:id="@+id/textView31"
-            android:layout_below="@+id/textView30"
+            android:layout_below="@+id/TVmailFI"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="#289906"
@@ -107,10 +109,11 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="2368-8304"
-            android:id="@+id/textView32"
+            android:autoLink="phone"
+            android:id="@+id/TVtelFE"
             android:layout_below="@+id/textView31"
-            android:layout_alignRight="@+id/textView29"
-            android:layout_alignEnd="@+id/textView29"
+            android:layout_alignRight="@+id/TVtelFI"
+            android:layout_alignEnd="@+id/TVtelFI"
             android:textStyle="bold"
             android:textIsSelectable="true" />
 
@@ -119,12 +122,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="fac-educ@uvg.edu.gt"
-            android:id="@+id/textView33"
+            android:id="@+id/TVmailFE"
             android:textIsSelectable="true"
             android:textStyle="bold"
-            android:layout_below="@+id/textView32"
-            android:layout_alignRight="@+id/textView30"
-            android:layout_alignEnd="@+id/textView30" />
+            android:layout_below="@+id/TVtelFE"
+            android:layout_alignRight="@+id/TVmailFI"
+            android:layout_alignEnd="@+id/TVmailFI" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -132,7 +135,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Facultad de Ciencias Sociales"
             android:id="@+id/textView34"
-            android:layout_below="@+id/textView33"
+            android:layout_below="@+id/TVmailFE"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="#289906"
@@ -143,25 +146,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="2369 -233"
-            android:id="@+id/textView35"
+            android:text="2369-5233"
+            android:autoLink="phone"
+            android:id="@+id/TVtelFCS"
             android:textIsSelectable="true"
             android:textStyle="bold"
             android:layout_below="@+id/textView34"
-            android:layout_alignLeft="@+id/textView32"
-            android:layout_alignStart="@+id/textView32" />
+            android:layout_alignLeft="@+id/TVtelFI"
+            android:layout_alignStart="@+id/TVtelFI" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="facccss@uvg.edu.gt"
-            android:id="@+id/textView36"
+            android:id="@+id/TVmailFCS"
             android:textStyle="bold"
             android:textIsSelectable="true"
-            android:layout_below="@+id/textView35"
-            android:layout_alignRight="@+id/textView33"
-            android:layout_alignEnd="@+id/textView33" />
+            android:layout_below="@+id/TVtelFCS"
+            android:layout_alignRight="@+id/TVmailFI"
+            android:layout_alignEnd="@+id/TVmailFI" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -169,7 +173,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Facultad de Ciencias y Humanidades"
             android:id="@+id/textView37"
-            android:layout_below="@+id/textView36"
+            android:layout_below="@+id/TVmailFCS"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="#289906"
@@ -181,24 +185,25 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="2368-8331"
-            android:id="@+id/textView38"
+            android:autoLink="phone"
+            android:id="@+id/TVtelFCH"
             android:textIsSelectable="true"
             android:textStyle="bold"
             android:layout_below="@+id/textView37"
-            android:layout_alignLeft="@+id/textView32"
-            android:layout_alignStart="@+id/textView32" />
+            android:layout_alignLeft="@+id/TVtelFI"
+            android:layout_alignStart="@+id/TVtelFI" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="faccchh@uvg.edu.gt"
-            android:id="@+id/textView39"
+            android:id="@+id/TVmailFCH"
             android:textStyle="bold"
             android:textIsSelectable="true"
-            android:layout_below="@+id/textView38"
-            android:layout_alignRight="@+id/textView33"
-            android:layout_alignEnd="@+id/textView33" />
+            android:layout_below="@+id/TVtelFCH"
+            android:layout_alignRight="@+id/TVmailFI"
+            android:layout_alignEnd="@+id/TVmailFI" />
 
     </RelativeLayout>
 </ScrollView>

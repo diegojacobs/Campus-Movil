@@ -25,6 +25,7 @@ public class Principal extends AppCompatActivity {
     ImageView mBtnPortal;
     ImageView mBtnBB;
     ImageView mBtnPhone;
+    ImageView mBtnCalendario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +41,22 @@ public class Principal extends AppCompatActivity {
         mBtnPortal = (ImageView) findViewById(R.id.BtnPortal);
         mBtnBB = (ImageView) findViewById(R.id.BtnBB);
         mBtnPhone = (ImageView) findViewById(R.id.BtnContact);
+        mBtnCalendario = (ImageView) findViewById(R.id.BtnCalendar);
 
         //Boton de Pago
         mBtnPago.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         startActivity(new Intent(Principal.this, Pago.class));
+                    }
+                }
+        );
+
+        //Boton de Calendario
+        mBtnCalendario.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        startActivity(new Intent(Principal.this, Calendario.class));
                     }
                 }
         );

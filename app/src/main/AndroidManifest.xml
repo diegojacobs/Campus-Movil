@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.usuario.uvgmovil" >
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -297,6 +298,40 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usuario.uvgmovil.Principal" />
+        </activity>
+        <activity
+            android:name=".Calendario"
+            android:label="Calendario"
+            android:parentActivityName=".Principal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Principal" />
+        </activity>
+        <activity
+            android:name=".Evento"
+            android:label="Evento"
+            android:parentActivityName=".Calendario" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Calendario" />
+        </activity>
+        <activity
+            android:name=".ConsultaParqueo"
+            android:label="@string/title_activity_consulta_parqueo"
+            android:parentActivityName=".Portal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Portal" />
+        </activity>
+        <activity
+            android:name=".ConsultaNotas"
+            android:label="@string/title_activity_consulta_notas"
+            android:parentActivityName=".Portal"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usuario.uvgmovil.Portal" />
         </activity>
     </application>
 
